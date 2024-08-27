@@ -14,5 +14,3 @@ def get_mask_account(account_number: str) -> str | None:
         return None
 
 
-print(get_mask_card_number("1234567891234569"))
-print(get_mask_account("12345678912345678900"))
