@@ -21,5 +21,3 @@ def get_date(input_string: str) -> str | None:
 
 print(mask_account_card("Счет 73654108430135874305"))
 print(get_date("2002-02-07T02:26:18.671407"))
-
-"коммент2"
