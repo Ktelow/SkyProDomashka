@@ -21,13 +21,13 @@ from src.processing import filter_by_state, sort_by_date
                 {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
             ],
         ),
-        ("", "", None),
-        ("some_text", "", None),
+        ("", "", "Неправильно указаны данные"),
+        ("some_text", "", "Неправильно указаны данные"),
     ],
 )
 def test_filter_by_state(
     data: list[dict[str, Any]], state: str, expected: list[dict[str, Any]]
-) -> list[dict[str, Any]] | None:
+) -> list[dict[str, Any]] | str:
     assert filter_by_state(data, state) == expected
 
 
@@ -49,7 +49,7 @@ def test_filter_by_state(
                 {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
             ],
         ),
-        ("", "", None),
+        ("", "", "Неправильно указаны данные"),
         (
             [
                 {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
@@ -69,5 +69,5 @@ def test_filter_by_state(
 )
 def test_sort_by_date(
     date_list: list[dict[str, Any]], reversed: bool, expected: list[dict[str, Any]]
-) -> list[dict[str, Any]] | None:
+) -> list[dict[str, Any]] | str:
     assert sort_by_date(date_list, reversed) == expected

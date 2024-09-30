@@ -10,9 +10,9 @@ def mask_account_card(input_string: str) -> str | None:
         elif len(account_data_split[-1]) == 20:
             return f"""{account_data_split[0]} {get_mask_account(account_data_split[-1])}"""
         else:
-            return None
+            return "Неправильно указаны данные"
     except IndexError:
-        return None
+        return "Неправильно указаны данные"
 
 
 def get_date(input_string: str) -> str | None:
@@ -26,4 +26,4 @@ def get_date(input_string: str) -> str | None:
     if number_count == 8:
         return date_formatted
     else:
-        return None
+        return "Некорректная дата"

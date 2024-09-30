@@ -16,12 +16,17 @@ def test_mask_account_card(account_number: str) -> None:
 
 
 def test_mask_account_card_empty() -> None:
-    assert mask_account_card("") == None
+    assert mask_account_card("") == "Неправильно указаны данные"
 
 
 @pytest.mark.parametrize(
     "date, date_expected",
-    [("2020.11.05T16:12:24", "05.11.2020"), ("1958.05.12", "12.05.1958"), ("random text", None), ("", None)],
+    [
+        ("2020.11.05T16:12:24", "05.11.2020"),
+        ("1958.05.12", "12.05.1958"),
+        ("random text", "Некорректная дата"),
+        ("", "Некорректная дата"),
+    ],
 )
 def test_get_date(date: str, date_expected: str) -> None:
     assert get_date(date) == date_expected
