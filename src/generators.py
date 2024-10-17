@@ -63,15 +63,12 @@ def transaction_descriptions(transactions: list[dict[str, Any]]) -> Generator:
 
 
 def card_number_generator(start: int, stop: int) -> Generator:
-  """Функция, которая генерирует номера карт"""
-  try:
-    for number in range(start, stop):
-        card_number = str(number)
-        while len(card_number) < 16:
-            card_number = "0" + card_number
-        yield f"{card_number[0:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:16]}"
-  except TypeError:
-    print("Неправильное значение")
-
-
-
+    """Функция, которая генерирует номера карт"""
+    try:
+        for number in range(start, stop):
+            card_number = str(number)
+            while len(card_number) < 16:
+                card_number = "0" + card_number
+            yield f"{card_number[0:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:16]}"
+    except TypeError:
+        print("Неправильное значение")
