@@ -3,6 +3,7 @@ from functools import wraps
 
 
 def log(filename=None):
+    """Декоратор, который создаёт файл с заданным именем и выдаёт надпись об успехе или причину ошибки"""
 
     def my_dec(func):
         @wraps(func)
