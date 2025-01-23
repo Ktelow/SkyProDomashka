@@ -1,10 +1,9 @@
-import pytest
-
 from src.decorators import log
 
 
 def test_log():
     """Тест для проверки декоратора"""
+
     @log()
     def my_test_func(x, y):
         return x + y
@@ -15,6 +14,7 @@ def test_log():
 
 def test_log_capsys(capsys):
     """Тест для проверки вывода в консоль"""
+
     @log()
     def my_test_func(a, b):
         return a + b
