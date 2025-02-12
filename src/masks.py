@@ -2,7 +2,9 @@ import logging
 
 logger = logging.getLogger("masks")
 logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler("..\\logs\\masks.log", "w", encoding="UTF-8")
+file_handler = logging.FileHandler(
+    "C:\\Users\\sasha\\PycharmProjects\\SkyProDomashka\\logs\\masks.log", "w", encoding="UTF-8"
+)
 file_formatter = logging.Formatter("%(asctime)s - %(filename)s - %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
@@ -37,5 +39,5 @@ def get_mask_account(account_number: str) -> str | None:
         return ""
 
 
-#print(get_mask_card_number([]))
-#print(get_mask_account([]))
+# print(get_mask_card_number([]))
+# print(get_mask_account([]))
