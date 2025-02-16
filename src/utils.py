@@ -5,7 +5,9 @@ from typing import Any
 
 logger = logging.getLogger("utils")
 logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler("..\\logs\\utils.log", "w", encoding="UTF-8")
+file_handler = logging.FileHandler(
+    "C:\\Users\\sasha\\PycharmProjects\\SkyProDomashka\\logs\\utils.log", "w", encoding="UTF-8"
+)
 file_formatter = logging.Formatter("%(asctime)s - %(filename)s - %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
